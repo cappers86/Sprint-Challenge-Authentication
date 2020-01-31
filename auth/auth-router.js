@@ -8,7 +8,7 @@ const restricted = require('./authenticate-middleware');
 router.post('/register', (req, res) => {
   // implement registration
   let user = req.body;
-  const hash = brcypt.hashSync(user.password, 10)
+  const hash = bcrypt.hashSync(user.password, 10)
   user.password = hash;
 
   Users.add(user)
